@@ -1,0 +1,13 @@
+{
+  "name": "improve",
+  "version": "1.0.0",
+  "description": "Turn a rough prompt into a clear, actionable engineering prompt, review it, then run it after you approve.",
+  "author": {
+    "name": "faizm10",
+    "url": "https://github.com/faizm10"
+  },
+  "homepage": "https://github.com/faizm10/improve",
+  "repository": "https://github.com/faizm10/improve",
+  "license": "MIT",
+  "keywords": ["prompt", "prompt-engineering", "planning", "workflow", "slash-command"]
+}

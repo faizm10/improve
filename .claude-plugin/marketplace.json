@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "improve",
+  "owner": {
+    "name": "faizm10",
+    "url": "https://github.com/faizm10"
+  },
+  "metadata": {
+    "description": "The /improve prompt-refinement command for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "improve",
+      "source": "./",
+      "description": "Turn a rough prompt into a clear, actionable engineering prompt, review it, then run it after you approve.",
+      "version": "1.0.0",
+      "author": { "name": "faizm10", "url": "https://github.com/faizm10" },
+      "category": "productivity",
+      "tags": ["prompt", "planning", "workflow"]
+    }
+  ]
+}
