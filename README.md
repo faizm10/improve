@@ -50,7 +50,7 @@ Claude Code doesn't auto-update third-party plugins unless you ask it to, and a 
 1. Run `/plugin` and open the **Marketplaces** tab.
 2. Select **improve** and turn on **auto-update**.
 
-You can set it in `~/.claude/settings.json` instead:
+You can set it in `~/.claude/settings.json` instead. Installing added an `improve` entry under `extraKnownMarketplaces`, so add `"autoUpdate": true` to that entry:
 
 ```json
 {
