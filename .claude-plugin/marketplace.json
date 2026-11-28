@@ -13,7 +13,6 @@
       "name": "improve",
       "source": "./",
       "description": "Turn a rough request into a clear prompt, check it with you, then run it after you approve.",
-      "version": "1.1.0",
       "author": { "name": "faizm10", "url": "https://github.com/faizm10" },
       "category": "productivity",
       "tags": ["prompt", "planning", "workflow"]

@@ -1,5 +1,12 @@
 # Changelog
 
+From here on, each change merged to `main` is a release. Claude Code tracks the plugin by its git commit, so there's no version number to bump.
+
+## 2026-11-27: Auto-updates
+
+- **Updates reach you automatically.** The plugin no longer pins a version number, so Claude Code treats each new commit on `main` as an update. Before, it ignored new commits until the version string changed.
+- **README:** how to turn on auto-update, from `/plugin` → Marketplaces or in `settings.json`, and what to check if updates don't arrive.
+
 ## 1.1.0
 
 - **Request changes asks what to change.** Picking it with no feedback no longer leaves Claude guessing. You get quick tweaks to pick from (smaller scope, different target, more detail, less detail), or you can type your own.

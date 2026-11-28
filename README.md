@@ -43,6 +43,28 @@ In Claude Code:
 
 Restart Claude Code if the command doesn't show up right away.
 
+### Turn on auto-update (recommended)
+
+Claude Code doesn't auto-update third-party plugins unless you ask it to, and a plugin can't turn this on by itself. It takes one step:
+
+1. Run `/plugin` and open the **Marketplaces** tab.
+2. Select **improve** and turn on **auto-update**.
+
+You can set it in `~/.claude/settings.json` instead. Installing added an `improve` entry under `extraKnownMarketplaces`, so add `"autoUpdate": true` to that entry:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "improve": {
+      "source": { "source": "github", "repo": "faizm10/improve" },
+      "autoUpdate": true
+    }
+  }
+}
+```
+
+With auto-update on, Claude Code checks for a new version a few minutes after the first message of each session. When it finds one, it shows `Plugin updated: improve`. Run `/reload-plugins` to use it right away, or it loads the next time you start Claude Code.
+
 ## Usage
 
 ```
@@ -73,7 +95,9 @@ Type `/improve` on its own to get a few examples.
 
 ## Update
 
-From a terminal:
+With [auto-update](#turn-on-auto-update-recommended) on, you don't need to do anything. Every change merged to `main` reaches you automatically.
+
+To update by hand, run this from a terminal:
 
 ```bash
 claude plugin marketplace update improve
@@ -87,6 +111,7 @@ Then restart Claude Code. See [CHANGELOG.md](CHANGELOG.md) for what changed.
 - **`/improve` doesn't appear:** restart Claude Code, then run `/plugin` to check the plugin is installed and enabled.
 - **It shows up as `/improve:improve`:** that's the same command, prefixed with the plugin name. Use either one.
 - **Two `/improve` commands:** you probably also copied the skill to `~/.claude/skills/improve`. Remove one of them.
+- **No updates arriving:** check that auto-update is on for **improve** under `/plugin` → Marketplaces. Auto-update is also off if you've set `DISABLE_AUTOUPDATER=1`, `DISABLE_UPDATES=1` or `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1`, unless you also set `FORCE_AUTOUPDATE_PLUGINS=1`.
 
 ## Uninstall
 
@@ -99,7 +124,7 @@ claude plugin marketplace remove improve
 
 ## Install without the plugin system
 
-Copy the skill into your global skills folder:
+A copied skill never updates, so use the plugin install above if you want updates. To copy it anyway, put the skill in your global skills folder:
 
 ```bash
 git clone https://github.com/faizm10/improve /tmp/improve
